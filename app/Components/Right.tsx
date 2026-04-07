@@ -33,12 +33,12 @@ export default function Right({ taskList, selectedTaskid, setTaskList }: rightPr
                 {editMode ? (
                     <>
                         <input
-                            className="text-2xl font-bold bg-transparent border-b border-zinc-600 outline-none"
+                            className="text-2xl font-bold bg-transparent border rounded-md px-1 border-zinc-600 outline-none"
                             value={editedTitle}
                             onChange={(e) => setEditedTitle(e.target.value)}
                         />
                         <textarea
-                            className="bg-transparent border border-zinc-600 outline-none rounded-md p-1 resize-none h-40"
+                            className="bg-transparent border border-zinc-600 outline-none rounded-md p-1 [scrollbar-width:none] field-sizing-content resize-y min-h-20 max-h-77 overflow-y-auto "
                             value={editedDescription}
                             onChange={(e) => setEditedDescription(e.target.value)}
                         />
