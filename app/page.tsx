@@ -28,7 +28,7 @@ export default function Home() {
   const [newDescription, setNewDescription] = useState("")
   return (
     <div>
-      <Hero taskList={taskList} />
+      <Hero taskList={taskList} setTaskList={setTaskList} />
       <button className="absolute bottom-7 right-10 rounded-md px-3 py-2 bg-zinc-800 border active:bg-zinc-700 transition-colors cursor-pointer" onClick={() => setAddTaskModalOpen(true)} >Add Task</button>
       <AddTaskModalOpen taskList={taskList} setTaskList={setTaskList} setNewTitle={setNewTitle} setNewDescription={setNewDescription} setAddTaskModalOpen = {setAddTaskModalOpen} addTaskModalOpen={addTaskModalOpen} newDescription={newDescription} newTitle={newTitle} />
     </div>
