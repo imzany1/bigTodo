@@ -1,0 +1,20 @@
+[
+  {
+    "id": "516c4d5f-d1d9-467d-b87c-5c4b45a986e5",
+    "title": "Task 1 ",
+    "description": "Hello there, The first task was to click on a task.... Amazing work, Task one accomplished!\n",
+    "progress": 0
+  },
+  {
+    "id": "287ec865-2dd1-4ff1-90e4-ca1d5b307c06",
+    "title": "Eh, Stringify!!",
+    "description": "DUde IDK, put something in\ud83e\udd0c",
+    "progress": 1
+  },
+  {
+    "id": "e4148535-2cc2-4d1c-9f60-6e370dc2e1dc",
+    "title": "Task 3",
+    "description": "Task 2 was to click on the task 3 tile, bamboozled to find out it is actually only the second task. Good going. Keep it up, you will find task 3 too...",
+    "progress": 0
+  }
+]

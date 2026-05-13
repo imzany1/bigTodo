@@ -1,3 +1,5 @@
+import { createTask } from "../services/taskService";
+
 type AddTaskModalProp = {
   setAddTaskModalOpen: setAddTaskModalOpen;
   addTaskModalOpen: boolean;
@@ -19,20 +21,16 @@ export default function AddTaskModalOpen({
   taskList,
   setTaskList,
 }: AddTaskModalProp) {
-  function handleSubmit(e: React.SubmitEvent) {
+async function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
-    const newTask = {
-      id: crypto.randomUUID(),
-      title: newTitle,
-      description: newDescription,
-      progress: 0,
-    };
+    const newTask = await createTask(newTitle, newDescription)
     setTaskList((prev) => [...prev, newTask]);
     setNewTitle("");
     setNewDescription("");
     setAddTaskModalOpen(false);
-  }
-  return (
+}
+
+return (
     <div className={` ${addTaskModalOpen === true ? "" : "hidden"}`}>
       <div
         className={`OverLay absolute w-screen h-screen bg-black/50 `}

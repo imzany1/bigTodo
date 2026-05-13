@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { getTasks, updateTask } from "../services/taskService"
+
 
 type rightProps = {
     taskList: Task[]
@@ -18,12 +20,13 @@ export default function Right({ taskList, selectedTaskid, setTaskList }: rightPr
         setEditMode(true)
     }
 
-    function handleSave() {
-        setTaskList(prev => prev.map(task =>
-            task.id === selectedTaskid
-                ? { ...task, title: editedTitle, description: editedDescription }
-                : task
-        ))
+    async function handleSave() {
+        await updateTask(selectedTaskid, {
+            title : editedTitle,
+            description : editedDescription
+        })
+        const freshTasks = await getTasks()
+        setTaskList(freshTasks)
         setEditMode(false)
     }
 
